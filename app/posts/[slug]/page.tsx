@@ -52,7 +52,7 @@ export default async function PostPage({
             )}
           </div>
           <div className="mb-6 text-lg">
-            {post.postTags.tags.map((tag: string, index: number) => (
+            {post?.postTags?.tags?.map((tag: string, index: number) => (
               <p
                 key={index}
                 style={{ marginRight: "12px" }}
