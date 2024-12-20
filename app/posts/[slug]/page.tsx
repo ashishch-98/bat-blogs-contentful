@@ -29,7 +29,7 @@ export default async function PostPage({
     <div className="container mx-auto px-5">
       <h2 className="mb-20 mt-8 text-2xl font-bold leading-tight tracking-tight md:text-4xl md:tracking-tighter">
         <Link href="/" className="hover:underline">
-          Blog
+          The Bat Blog
         </Link>
         .
       </h2>
@@ -51,6 +51,18 @@ export default async function PostPage({
               <Avatar name={post.author.name} picture={post.author.picture} />
             )}
           </div>
+          <div className="mb-6 text-lg">
+            {post.postTags.tags.map((tag: string, index: number) => (
+              <p
+                key={index}
+                style={{ marginRight: "12px" }}
+                className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset"
+              >
+                {tag}
+              </p>
+            ))}
+          </div>
+
           <div className="mb-6 text-lg">
             <Date dateString={post.date} />
           </div>
