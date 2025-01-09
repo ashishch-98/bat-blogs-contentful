@@ -72,6 +72,9 @@ export default async function Page() {
             excerpt={heroPost.excerpt}
           />
         )}
+        <h2 className="mb-8 text-4xl md:text-4xl font-bold tracking-tighter leading-tight">
+          More Stories
+        </h2>
         <MoreStories morePosts={morePosts} />
       </div>
     </>

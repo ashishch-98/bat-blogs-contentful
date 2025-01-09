@@ -22,22 +22,16 @@ const Footer = () => {
             Home
           </Link>
           <Link
-            href="/menu"
+            href="/posts"
             className="text-lg text-white hover:text-green-400 transition duration-300"
           >
-            Menu
+            Posts
           </Link>
           <Link
-            href="/about"
+            href="https://www.ubereats.com/?ps=1"
             className="text-lg text-white hover:text-green-400 transition duration-300"
           >
-            About
-          </Link>
-          <Link
-            href="/contact"
-            className="text-lg text-white hover:text-green-400 transition duration-300"
-          >
-            Contact
+            Order Now
           </Link>
         </nav>
       </div>

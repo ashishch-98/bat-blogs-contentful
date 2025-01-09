@@ -14,7 +14,9 @@ const Header = () => {
       <div className="max-w-screen-xl mx-auto flex items-center justify-between">
         {/* Brand Name - Left */}
         <div className="flex items-center space-x-4">
-          <h1 className="text-2xl font-bold text-white-400">Who Cooks 🍽</h1>
+          <Link href="/">
+            <h1 className="text-2xl font-bold text-white-400">Who Cooks 🍽</h1>
+          </Link>
         </div>
 
         {/* Desktop Menu - Center */}
@@ -26,22 +28,17 @@ const Header = () => {
             Home
           </Link>
           <Link
-            href="/about"
+            href="/posts"
             className="text-lg hover:text-green-400 transition duration-300"
           >
-            Blogs
+            Posts
           </Link>
           <Link
-            href="/menu"
+            href="https://www.ubereats.com/?ps=1"
             className="text-lg hover:text-green-400 transition duration-300"
+            target="_blank"
           >
-            About
-          </Link>
-          <Link
-            href="/contact"
-            className="text-lg hover:text-green-400 transition duration-300"
-          >
-            Contact
+            Order Now
           </Link>
         </nav>
 
