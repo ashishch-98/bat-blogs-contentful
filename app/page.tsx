@@ -8,24 +8,7 @@ import MoreStories from "./more-stories";
 
 import { getAllPosts } from "@/lib/api";
 import { CMS_NAME, CMS_URL } from "@/lib/constants";
-
-function Intro() {
-  return (
-    <section className="flex-col md:flex-row flex items-center md:justify-between mt-16 mb-20 md:mb-16">
-      <h1 className="text-6xl md:text-6xl font-bold tracking-tighter leading-tight md:pr-8">
-        The Bat Blog
-      </h1>
-      <h2 className="text-center md:text-left text-lg mt-5 md:pl-8">
-        <a
-          href="https://www.dc.com/characters/batman"
-          className="underline hover:text-success duration-200 transition-colors"
-        >
-          🦇{" "}
-        </a>{" "}
-      </h2>
-    </section>
-  );
-}
+import HeroBanner from "./components/heroBanner";
 
 function HeroPost({
   title,
@@ -76,19 +59,21 @@ export default async function Page() {
   const morePosts = allPosts.slice(1);
 
   return (
-    <div className="container mx-auto px-5">
-      <Intro />
-      {heroPost && (
-        <HeroPost
-          title={heroPost.title}
-          coverImage={heroPost.coverImage}
-          date={heroPost.date}
-          author={heroPost.author}
-          slug={heroPost.slug}
-          excerpt={heroPost.excerpt}
-        />
-      )}
-      <MoreStories morePosts={morePosts} />
-    </div>
+    <>
+      <HeroBanner />
+      <div className="container mx-auto px-5">
+        {heroPost && (
+          <HeroPost
+            title={heroPost.title}
+            coverImage={heroPost.coverImage}
+            date={heroPost.date}
+            author={heroPost.author}
+            slug={heroPost.slug}
+            excerpt={heroPost.excerpt}
+          />
+        )}
+        <MoreStories morePosts={morePosts} />
+      </div>
+    </>
   );
 }

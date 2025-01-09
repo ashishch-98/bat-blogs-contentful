@@ -19,7 +19,9 @@ function PostPreview({
   slug: string;
 }) {
   return (
-    <div>
+    <div className="bg-white flex flex-col h-full">
+      {" "}
+      {/* Ensuring full height and flexbox */}
       <div className="mb-5">
         <CoverImage title={title} slug={slug} url={coverImage.url} />
       </div>
@@ -31,7 +33,8 @@ function PostPreview({
       <div className="text-lg mb-4">
         <DateComponent dateString={date} />
       </div>
-      <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
+      <p className="text-lg leading-relaxed mb-4 flex-grow">{excerpt}</p>{" "}
+      {/* Ensuring text doesn't overflow */}
       {author && <Avatar name={author.name} picture={author.picture} />}
     </div>
   );
@@ -43,7 +46,7 @@ export default function MoreStories({ morePosts }: { morePosts: any[] }) {
       <h2 className="mb-8 text-4xl md:text-4xl font-bold tracking-tighter leading-tight">
         More Stories
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-32">
+      <div className="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x- gap-y-10 md:gap-y-10 mb-32">
         {morePosts.map((post) => (
           <PostPreview
             key={post.slug}

@@ -18,12 +18,11 @@ export default function CoverImage({
     <ContentfulImage
       alt={`Cover Image for ${title}`}
       priority
-      width={2000}
-      height={1000}
-      className={cn("shadow-small", {
+      className={cn("object-cover", "rounded-lg", "shadow-small", {
         "hover:shadow-medium transition-shadow duration-200": slug,
       })}
       src={url}
+      layout="fill"
     />
   );
 
@@ -31,10 +30,15 @@ export default function CoverImage({
     <div className="sm:mx-0">
       {slug ? (
         <Link href={`/posts/${slug}`} aria-label={title}>
-          {image}
+          {/* Container with consistent size for all images */}
+          <div className="relative w-[550px] h-[350px] overflow-hidden rounded-lg">
+            {image}
+          </div>
         </Link>
       ) : (
-        image
+        <div className="relative w-[550px] h-[350px] overflow-hidden rounded-lg">
+          {image}
+        </div>
       )}
     </div>
   );

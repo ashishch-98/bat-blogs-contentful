@@ -1,10 +1,13 @@
 import "./globals.css";
 import { Inter } from "next/font/google";
 import { EXAMPLE_PATH, CMS_NAME } from "@/lib/constants";
+import Link from "next/link";
+import Header from "./components/header";
+import Footer from "./components/footer";
 
 export const metadata = {
-  title: `The Batman Blog`,
-  description: `Writing of Batman built with Next.js and ${CMS_NAME}.`,
+  title: `Food Blog`,
+  description: `Writing of food built with Next.js and ${CMS_NAME}.`,
 };
 
 const inter = Inter({
@@ -13,34 +16,6 @@ const inter = Inter({
   display: "swap",
 });
 
-function Footer() {
-  return (
-    <footer className="bg-accent-1 border-t border-accent-2">
-      <div className="container mx-auto px-5">
-        <div className="py-28 flex flex-col lg:flex-row items-center">
-          <h3 className="text-4xl lg:text-5xl font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
-            Blog on Batman's Adventure.
-          </h3>
-          <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
-            <a
-              href="https://www.dc.com/characters/batman"
-              className="mx-3 bg-black hover:bg-white hover:text-black border border-black text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0"
-            >
-              More about Batman
-            </a>
-            <a
-              href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
-              className="mx-3 font-bold hover:underline"
-            >
-              View on GitHub
-            </a>
-          </div>
-        </div>
-      </div>
-    </footer>
-  );
-}
-
 export default function RootLayout({
   children,
 }: {
@@ -48,8 +23,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.variable}>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet"
+        ></link>
+      </head>
+
       <body>
         <section className="min-h-screen">
+          <Header />
           <main>{children}</main>
           <Footer />
         </section>
