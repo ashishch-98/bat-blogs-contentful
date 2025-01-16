@@ -1,10 +1,10 @@
 import { draftMode } from "next/headers";
 
-import MoreStories from "./components/Blog/more-stories";
+import MoreStories from "./components/blog/more-stories";
 
 import { getAllPosts } from "@/lib/api";
-import HeroBanner from "./components/Blog/heroBanner";
-import HeroPost from "./components/Blog/heroPost";
+import HeroBanner from "./components/blog/heroBanner";
+import HeroPost from "./components/blog/heroPost";
 
 export default async function Page() {
   const { isEnabled } = draftMode();

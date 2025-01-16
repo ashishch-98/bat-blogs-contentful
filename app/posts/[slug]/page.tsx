@@ -1,14 +1,12 @@
 import Link from "next/link";
 import { draftMode } from "next/headers";
 
-import MoreStories from "../../components/Blog/more-stories";
-import Avatar from "../../components/Blog/avatar";
-import Date from "../../components/Blog/date";
-import CoverImage from "../../cover-image";
-
+import MoreStories from "@/app/components/blog/more-stories";
+import ContentfulImage from "@/lib/contentful-image";
+import Avatar from "@/app/components/Blog/avatar";
+import Date from "@/app/components/Blog/date";
 import { Markdown } from "@/lib/markdown";
 import { getAllPosts, getPostAndMorePosts } from "@/lib/api";
-import ContentfulImage from "@/lib/contentful-image";
 
 export async function generateStaticParams() {
   const allPosts = await getAllPosts(false);
