@@ -1,6 +1,6 @@
 import { getAllPosts } from "@/lib/api";
 import { draftMode } from "next/headers";
-import MoreStories from "../more-stories";
+import MoreStories from "../components/Blog/more-stories";
 
 export default async function AllPosts() {
   const { isEnabled } = draftMode();

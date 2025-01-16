@@ -2,8 +2,8 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import { EXAMPLE_PATH, CMS_NAME } from "@/lib/constants";
 import Link from "next/link";
-import Header from "./components/header";
-import Footer from "./components/footer";
+import Header from "./components/Blog/header";
+import Footer from "./components/Blog/footer";
 
 export const metadata = {
   title: `Food Blog`,

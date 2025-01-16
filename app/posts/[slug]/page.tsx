@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { draftMode } from "next/headers";
 
-import MoreStories from "../../more-stories";
-import Avatar from "../../avatar";
-import Date from "../../date";
+import MoreStories from "../../components/Blog/more-stories";
+import Avatar from "../../components/Blog/avatar";
+import Date from "../../components/Blog/date";
 import CoverImage from "../../cover-image";
 
 import { Markdown } from "@/lib/markdown";
