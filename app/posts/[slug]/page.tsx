@@ -3,8 +3,8 @@ import { draftMode } from "next/headers";
 
 import MoreStories from "@/app/components/blog/more-stories";
 import ContentfulImage from "@/lib/contentful-image";
-import Avatar from "@/app/components/Blog/avatar";
-import Date from "@/app/components/Blog/date";
+import Avatar from "@/app/components/blog/avatar";
+import Date from "@/app/components/blog/date";
 import { Markdown } from "@/lib/markdown";
 import { getAllPosts, getPostAndMorePosts } from "@/lib/api";
 
@@ -19,10 +19,11 @@ export async function generateStaticParams() {
 export default async function PostPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const { isEnabled } = draftMode();
-  const { post, morePosts } = await getPostAndMorePosts(params.slug, isEnabled);
+  const { slug } = await params;
+  const { isEnabled } = await draftMode();
+  const { post, morePosts } = await getPostAndMorePosts(slug, isEnabled);
 
   return (
     <div className="container mx-auto px-5">
